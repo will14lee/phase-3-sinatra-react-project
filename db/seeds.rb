@@ -78,3 +78,17 @@ PokemonTrainer.create(
 )
 
 puts "✅ Done seeding!"
+
+#Dummy Data for Postman
+# {
+#     "name": "Squirtle",
+#     "pokemon_type": "Water",
+#     "level": 5,
+#     "pokemon_trainer_id": 4,
+#     "owned_by_trainer": true
+# }
+
+# {
+#     "name": "Brock",
+#     "gender": "Male"
+# }
