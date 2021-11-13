@@ -55,7 +55,6 @@ class ApplicationController < Sinatra::Base
     })
   end
 
-
   post "/pokemon_trainers" do
     pokemon_trainer= PokemonTrainer.create(
       name: params[:name],
@@ -66,6 +65,5 @@ class ApplicationController < Sinatra::Base
       pokemons: { only: [:name]}
     })
   end
-
 
 end
