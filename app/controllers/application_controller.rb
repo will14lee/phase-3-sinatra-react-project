@@ -53,6 +53,7 @@ class ApplicationController < Sinatra::Base
       pokemon_trainer: { only: [:name]}
     })
   end
+
   get "/pokemon_trainers" do
     pokemon_trainers= PokemonTrainer.all
     pokemon_trainers.to_json(include: {
@@ -78,4 +79,14 @@ class ApplicationController < Sinatra::Base
     })
   end
 
+  patch "/pokemon_trainers/:id" do
+    pokemon_trainer= PokemonTrainer.find_by(id: params[:id])
+    pokemon_trainer.update(
+      name: params[:name],
+      gender: params[:gender]
+      )
+    pokemon_trainer.to_json(include: {
+      pokemons: { only: [:name]}
+    })
+  end
 end
