@@ -3,7 +3,7 @@ puts "🌱 Seeding spices..."
 # Seed your database here
 Pokemon.create(
     name: "Bulbasaur",
-    type: "Grass",
+    pokemon_type: "Grass",
     level: "5",
     pokemon_trainer_id: 1,
     owned_by_trainer: true
@@ -11,7 +11,7 @@ Pokemon.create(
 
 Pokemon.create(
     name: "Charmander",
-    type: "Fire",
+    pokemon_type: "Fire",
     level: "5",
     pokemon_trainer_id: 2,
     owned_by_trainer: true
@@ -19,7 +19,7 @@ Pokemon.create(
 
 Pokemon.create(
     name: "Squirtle",
-    type: "Water",
+    pokemon_type: "Water",
     level: "5",
     pokemon_trainer_id: nil,
     owned_by_trainer: false
@@ -27,7 +27,7 @@ Pokemon.create(
 
 Pokemon.create(
     name: "Caterpie",
-    type: "Bug",
+    pokemon_type: "Bug",
     level: "5",
     pokemon_trainer_id: nil,
     owned_by_trainer: false
@@ -35,7 +35,7 @@ Pokemon.create(
 
 Pokemon.create(
     name: "Mewtwo",
-    type: "Psychic",
+    pokemon_type: "Psychic",
     level: "70",
     pokemon_trainer_id: 3,
     owned_by_trainer: true
@@ -43,7 +43,7 @@ Pokemon.create(
 
 Pokemon.create(
     name: "Arceus",
-    type: "Normal",
+    pokemon_type: "Normal",
     level: "70",
     pokemon_trainer_id: nil,
     owned_by_trainer: false
@@ -51,7 +51,7 @@ Pokemon.create(
 
 Pokemon.create(
     name: "Togepie",
-    type: "Normal",
+    pokemon_type: "Normal",
     level: "10",
     pokemon_trainer_id: 4,
     owned_by_trainer: true
