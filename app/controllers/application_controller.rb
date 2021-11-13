@@ -34,4 +34,11 @@ get "/pokemon_trainers" do
     })
 end
 
+get "/pokemon_trainers/:id" do
+  pokemon_trainer= PokemonTrainer.find_by(id: params[:id])
+  pokemon_trainer.to_json(include: {
+    pokemons: { only: [:name]}
+    })
+end
+
 end
