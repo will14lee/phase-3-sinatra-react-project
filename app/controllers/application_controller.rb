@@ -8,9 +8,12 @@ class ApplicationController < Sinatra::Base
 
   get "/pokemons" do
     pokemons= Pokemon.all
-    pokemons.to_json(include: {
+    pokemons.to_json.(include: {
       pokemon_trainer: { only: [:name]}
     })
+    #How to make sure there are no repeats of same pokemon with names
+    # pokemons.select(:name).distinct.to_json.(include: {
+
   end
   
   get "/pokemons/:id" do
@@ -65,6 +68,19 @@ class ApplicationController < Sinatra::Base
     pokemon_trainers.to_json(include: {
       pokemons: { only: [:name]}
       })
+      # How to make uniq pokemon trainers?
+    # pokemon_trainers.select(:name).distinct.to_json(include: {
+
+  end
+  
+  get "/pokemon_trainers_pokemon/:name" do
+    pokemon_trainer= PokemonTrainer.find_by(name: params[:name])
+    if pokemon_trainer
+      their_pokemon= pokemon_trainer.pokemons
+      their_pokemon.to_json
+    else
+      "404 Error Trainer not found"
+    end
   end
 
   get "/pokemon_trainers/:id" do
@@ -101,4 +117,5 @@ class ApplicationController < Sinatra::Base
     pokemon_trainer.destroy
     pokemon_trainer.to_json
   end
+
 end
