@@ -1,5 +1,4 @@
 puts "🌱 Seeding spices..."
-
 # Seed your database here
 Pokemon.create(
     name: "Bulbasaur",

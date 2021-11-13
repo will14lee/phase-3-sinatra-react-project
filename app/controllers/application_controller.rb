@@ -59,7 +59,7 @@ class ApplicationController < Sinatra::Base
     pokemon.destroy
     pokemon.to_json
   end
-  
+
   get "/pokemon_trainers" do
     pokemon_trainers= PokemonTrainer.all
     pokemon_trainers.to_json(include: {
@@ -96,4 +96,9 @@ class ApplicationController < Sinatra::Base
     })
   end
 
+  delete "/pokemon_trainers/:id" do
+    pokemon_trainer= PokemonTrainer.find_by(id: params[:id])
+    pokemon_trainer.destroy
+    pokemon_trainer.to_json
+  end
 end
