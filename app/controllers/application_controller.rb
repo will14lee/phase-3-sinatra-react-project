@@ -3,12 +3,19 @@ class ApplicationController < Sinatra::Base
   
   # Add your routes here
   get "/" do
-    "Hello welcome to the Pokemon API!"
+    "Hello welcome to the Pokemon API!
+    Places you can go: 
+    /pokemons
+    /pokemons/:id
+    /strongest_pokemon
+    /pokemon_trainers
+    pokemon_trainers_pokemon/:name
+    pokemon_trainers/:id"
   end
 
   get "/pokemons" do
     pokemons= Pokemon.all
-    pokemons.to_json.(include: {
+    pokemons.to_json(include: {
       pokemon_trainer: { only: [:name]}
     })
     #How to make sure there are no repeats of same pokemon with names
